@@ -10,6 +10,8 @@ describe('datetime', () => {
   it('formatLocalDate gün ve kısa ay döndürür', () => {
     const out = formatLocalDate('2026-06-11T20:00:00Z', 'tr-TR', 'UTC');
     expect(out).toMatch(/11/);
+    expect(out).toMatch(/Haziran/);
+    expect(out).toMatch(/Perşembe/); // gün adı dahil
   });
 
   it('isSameLocalDay aynı takvim günü için true döner', () => {

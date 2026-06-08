@@ -6,7 +6,7 @@ export function formatLocalTime(isoUtc, locale = 'tr-TR', timeZone = undefined) 
 
 export function formatLocalDate(isoUtc, locale = 'tr-TR', timeZone = undefined) {
   return new Date(isoUtc).toLocaleDateString(locale, {
-    day: 'numeric', month: 'short', timeZone,
+    weekday: 'long', day: 'numeric', month: 'long', timeZone,
   });
 }
 
