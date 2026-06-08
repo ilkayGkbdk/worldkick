@@ -20,3 +20,7 @@ export async function loadAll() {
 export function teamById(list, id) {
   return list.find((t) => t.id === id) ?? null;
 }
+
+export function matchById(list, id) {
+  return list.find((m) => String(m.id) === String(id)) ?? null;
+}
