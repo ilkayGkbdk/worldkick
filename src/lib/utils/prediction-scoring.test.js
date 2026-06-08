@@ -37,3 +37,31 @@ describe('championOf', () => {
     expect(championOf([{ stage: 'final', status: 'scheduled', winner: null }])).toBeNull();
   });
 });
+
+import { computePredictionScore } from './prediction-scoring.js';
+
+describe('computePredictionScore', () => {
+  const matches = [
+    { id: 'm1', stage: 'group', status: 'finished', homeScore: 2, awayScore: 1, winner: 'A' },
+    { id: 'm2', stage: 'group', status: 'scheduled', homeScore: null, awayScore: null, winner: null },
+    { id: 'k1', stage: 'qf', status: 'finished', homeScore: 1, awayScore: 0, winner: 'A' },
+    { id: 'f1', stage: 'final', status: 'finished', homeScore: 1, awayScore: 0, winner: 'A' },
+  ];
+  const predictions = {
+    matchScores: { m1: { home: 2, away: 1 }, m2: { home: 1, away: 1 } },
+    bracketPicks: { k1: 'A' },
+    champion: 'A',
+  };
+
+  it('maç, bracket ve şampiyon puanlarını toplar', () => {
+    const s = computePredictionScore(predictions, matches);
+    expect(s.matchPoints).toBe(5);
+    expect(s.bracketPoints).toBe(4);
+    expect(s.championPoints).toBe(10);
+    expect(s.total).toBe(19);
+    expect(s.scoredCount).toBe(1);
+    expect(s.correctCount).toBe(1);
+    expect(s.exactCount).toBe(1);
+    expect(s.best).toEqual({ matchId: 'm1', points: 5 });
+  });
+});
