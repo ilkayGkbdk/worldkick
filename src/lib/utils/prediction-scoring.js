@@ -49,3 +49,22 @@ export function computePredictionScore(predictions, matches) {
 
   return { matchPoints, bracketPoints, championPoints, total: matchPoints + bracketPoints + championPoints, scoredCount, correctCount, exactCount, best };
 }
+
+const KNOCKOUT = new Set(['r32', 'r16', 'qf', 'sf', 'final']);
+
+export function isMatchPredictable(match, nowMs = Date.now()) {
+  return Date.parse(match.datetimeUTC) > nowMs;
+}
+
+export function isBracketPredictable(match, teams, nowMs = Date.now()) {
+  if (!KNOCKOUT.has(match.stage)) return false;
+  const known = (id) => teams.some((t) => t.id === id);
+  return known(match.homeId) && known(match.awayId) && Date.parse(match.datetimeUTC) > nowMs;
+}
+
+export function isChampionLocked(matches, nowMs = Date.now()) {
+  const first = matches
+    .filter((m) => m.stage === 'r32')
+    .sort((a, b) => Date.parse(a.datetimeUTC) - Date.parse(b.datetimeUTC))[0];
+  return first ? nowMs >= Date.parse(first.datetimeUTC) : false;
+}
