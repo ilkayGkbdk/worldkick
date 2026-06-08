@@ -2,14 +2,20 @@
   export let code = ''; // ISO alpha-2, lowercase
   export let size = 34;
 
-  // Map all flag SVGs to URLs at build time.
-  const flagUrls = import.meta.glob(
+  // Lazy map: each flag SVG becomes an async loader, so only the flags
+  // actually rendered get fetched (instead of inlining all ~430 into the JS).
+  const flagLoaders = import.meta.glob(
     '/node_modules/circle-flags/flags/*.svg',
-    { eager: true, query: '?url', import: 'default' }
+    { query: '?url', import: 'default' }
   );
-  $: src = code
-    ? flagUrls[`/node_modules/circle-flags/flags/${code}.svg`] ?? ''
-    : '';
+
+  let src = '';
+  $: resolveFlag(code);
+
+  async function resolveFlag(c) {
+    const loader = c ? flagLoaders[`/node_modules/circle-flags/flags/${c}.svg`] : null;
+    src = loader ? await loader() : '';
+  }
 </script>
 
 {#if src}
