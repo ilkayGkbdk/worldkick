@@ -1,0 +1,16 @@
+[
+  {
+    "id": "m1", "stage": "group", "group": "A",
+    "homeId": "MEX", "awayId": "USA",
+    "datetimeUTC": "2026-06-11T20:00:00Z",
+    "venue": "Estadio Azteca", "city": "Mexico City",
+    "status": "scheduled", "homeScore": null, "awayScore": null, "scorers": []
+  },
+  {
+    "id": "m2", "stage": "group", "group": "F",
+    "homeId": "BRA", "awayId": "ARG",
+    "datetimeUTC": "2026-06-11T23:00:00Z",
+    "venue": "MetLife Stadium", "city": "New Jersey",
+    "status": "scheduled", "homeScore": null, "awayScore": null, "scorers": []
+  }
+]

@@ -1,0 +1,7 @@
+[
+  { "id": "MEX", "name": "Meksika", "code": "MEX", "group": "A", "flag": "mx" },
+  { "id": "USA", "name": "ABD", "code": "USA", "group": "D", "flag": "us" },
+  { "id": "CAN", "name": "Kanada", "code": "CAN", "group": "B", "flag": "ca" },
+  { "id": "BRA", "name": "Brezilya", "code": "BRA", "group": "F", "flag": "br" },
+  { "id": "ARG", "name": "Arjantin", "code": "ARG", "group": "?", "flag": "ar" }
+]
