@@ -62,6 +62,9 @@ export function transformMatches(apiMatches, teamMeta = {}) {
       status: mapStatus(m.status),
       homeScore: m.score?.fullTime?.home ?? null,
       awayScore: m.score?.fullTime?.away ?? null,
+      winner: m.score?.winner === 'HOME_TEAM' ? (home.tla || String(home.id ?? ''))
+        : m.score?.winner === 'AWAY_TEAM' ? (away.tla || String(away.id ?? ''))
+        : null,
       scorers: [],
     };
   });

@@ -24,7 +24,7 @@ describe('transformMatches', () => {
     {
       id: 100, utcDate: '2026-06-11T20:00:00Z', status: 'FINISHED',
       stage: 'GROUP_STAGE', group: 'GROUP_A', venue: 'Estadio Azteca',
-      score: { fullTime: { home: 2, away: 1 } },
+      score: { winner: 'HOME_TEAM', fullTime: { home: 2, away: 1 } },
       homeTeam: { id: 1, name: 'Mexico', tla: 'MEX' },
       awayTeam: { id: 2, name: 'United States', tla: 'USA' },
     },
@@ -43,9 +43,10 @@ describe('transformMatches', () => {
     expect(matches[0]).toMatchObject({
       id: '100', stage: 'group', group: 'A', homeId: 'MEX', awayId: 'USA',
       datetimeUTC: '2026-06-11T20:00:00Z', venue: 'Estadio Azteca', city: '',
-      status: 'finished', homeScore: 2, awayScore: 1, scorers: [],
+      status: 'finished', homeScore: 2, awayScore: 1, winner: 'MEX', scorers: [],
     });
     expect(matches[1]).toMatchObject({ id: '200', stage: 'final', group: null, status: 'scheduled', homeScore: null, awayScore: null });
+    expect(matches[1].winner).toBeNull();
   });
 
   it('takımları toplar, meta tablosundan ad/bayrak uygular, grubu atar', () => {
