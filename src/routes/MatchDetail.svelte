@@ -38,7 +38,9 @@
     <div class="meta">
       <div><span class="k">Tarih</span><span>{formatLocalDate(match.datetimeUTC)} · {formatLocalTime(match.datetimeUTC)}</span></div>
       <div><span class="k">Stat</span><span>{match.venue}</span></div>
-      <div><span class="k">Şehir</span><span>{match.city}</span></div>
+      {#if match.city}
+        <div><span class="k">Şehir</span><span>{match.city}</span></div>
+      {/if}
       {#if match.group}
         <div><span class="k">Grup</span><span>{match.group}</span></div>
       {/if}
