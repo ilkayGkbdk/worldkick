@@ -1,17 +1,18 @@
 <script>
   import { router } from 'svelte-spa-router';
+  import Icon from './Icon.svelte';
   const tabs = [
-    { path: '/', icon: '🏠', label: 'Ana Sayfa' },
-    { path: '/fixtures', icon: '📅', label: 'Fikstür' },
-    { path: '/tournament', icon: '🏆', label: 'Turnuva' },
-    { path: '/favorites', icon: '⭐', label: 'Favoriler' },
+    { path: '/', icon: 'home', label: 'Ana Sayfa' },
+    { path: '/fixtures', icon: 'calendar', label: 'Fikstür' },
+    { path: '/tournament', icon: 'trophy', label: 'Turnuva' },
+    { path: '/favorites', icon: 'star', label: 'Favoriler' },
   ];
 </script>
 
 <nav class="tabbar">
   {#each tabs as tab}
     <a href={`#${tab.path}`} class="tab" class:active={router.location === tab.path}>
-      <span class="icon">{tab.icon}</span>
+      <Icon name={tab.icon} size={22} />
       <span class="lbl">{tab.label}</span>
     </a>
   {/each}
@@ -25,8 +26,8 @@
   }
   .tab {
     flex: 1; display: flex; flex-direction: column; align-items: center;
-    gap: 2px; text-decoration: none; color: var(--muted); font-size: 10px;
+    gap: 3px; text-decoration: none; color: var(--muted); font-size: 10px;
+    font-weight: 600;
   }
   .tab.active { color: var(--accent); }
-  .icon { font-size: 18px; }
 </style>
