@@ -8,12 +8,14 @@
   import Fixtures from './routes/Fixtures.svelte';
   import Tournament from './routes/Tournament.svelte';
   import Favorites from './routes/Favorites.svelte';
+  import MatchDetail from './routes/MatchDetail.svelte';
 
   const routes = {
     '/': Home,
     '/fixtures': Fixtures,
     '/tournament': Tournament,
     '/favorites': Favorites,
+    '/match/:id': MatchDetail,
   };
   onMount(loadAll);
 </script>
