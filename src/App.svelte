@@ -9,6 +9,7 @@
   import Tournament from './routes/Tournament.svelte';
   import Favorites from './routes/Favorites.svelte';
   import MatchDetail from './routes/MatchDetail.svelte';
+  import TeamDetail from './routes/TeamDetail.svelte';
 
   const routes = {
     '/': Home,
@@ -16,6 +17,7 @@
     '/tournament': Tournament,
     '/favorites': Favorites,
     '/match/:id': MatchDetail,
+    '/team/:id': TeamDetail,
   };
   onMount(loadAll);
 </script>
