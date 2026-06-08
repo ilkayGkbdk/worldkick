@@ -10,6 +10,7 @@
   import Favorites from './routes/Favorites.svelte';
   import MatchDetail from './routes/MatchDetail.svelte';
   import TeamDetail from './routes/TeamDetail.svelte';
+  import Predictions from './routes/Predictions.svelte';
 
   const routes = {
     '/': Home,
@@ -18,6 +19,7 @@
     '/favorites': Favorites,
     '/match/:id': MatchDetail,
     '/team/:id': TeamDetail,
+    '/predictions': Predictions,
   };
   onMount(loadAll);
 </script>

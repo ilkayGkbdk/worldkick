@@ -5,6 +5,7 @@
     { path: '/', icon: 'home', label: 'Ana Sayfa' },
     { path: '/fixtures', icon: 'calendar', label: 'Fikstür' },
     { path: '/tournament', icon: 'trophy', label: 'Turnuva' },
+    { path: '/predictions', icon: 'target', label: 'Tahmin' },
     { path: '/favorites', icon: 'star', label: 'Favoriler' },
   ];
 </script>
