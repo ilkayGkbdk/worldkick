@@ -2,12 +2,14 @@
   import { matches, teams, teamById, matchById } from '../lib/stores/data.js';
   import { formatLocalDate, formatLocalTime } from '../lib/utils/datetime.js';
   import Flag from '../components/Flag.svelte';
+  import { predictions } from '../lib/stores/predictions.js';
 
   export let params = {};
   $: match = matchById($matches, params.id);
   $: home = match ? teamById($teams, match.homeId) : null;
   $: away = match ? teamById($teams, match.awayId) : null;
   $: finished = match?.status === 'finished';
+  $: myPred = match ? $predictions.matchScores[match.id] : null;
 </script>
 
 <div class="page">
@@ -34,6 +36,10 @@
         <span>{away?.name ?? match.awayId}</span>
       </a>
     </div>
+
+    {#if myPred}
+      <div class="mypred">Tahminin: <b>{myPred.home} - {myPred.away}</b></div>
+    {/if}
 
     <div class="meta">
       <div><span class="k">Tarih</span><span>{formatLocalDate(match.datetimeUTC)} · {formatLocalTime(match.datetimeUTC)}</span></div>
@@ -74,4 +80,6 @@
   .scorers li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
   .min { color: var(--muted); }
   .empty { color: var(--muted); }
+  .mypred { margin-top: 12px; text-align: center; font-size: 12px; color: var(--muted); }
+  .mypred b { color: var(--accent); font-family: var(--font-head); }
 </style>
