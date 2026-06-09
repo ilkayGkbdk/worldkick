@@ -1,16 +1,19 @@
 <script>
   import { matches, teams, teamById } from '../lib/stores/data.js';
   import { predictions } from '../lib/stores/predictions.js';
-  import { computePredictionScore, isMatchPredictable, isChampionLocked } from '../lib/utils/prediction-scoring.js';
+  import { computePredictionScore, isMatchPredictable, isChampionLocked, isBracketPredictable } from '../lib/utils/prediction-scoring.js';
   import PredictionScorecard from '../components/PredictionScorecard.svelte';
   import PredictMatch from '../components/PredictMatch.svelte';
   import ChampionPicker from '../components/ChampionPicker.svelte';
+  import BracketPredict from '../components/BracketPredict.svelte';
 
   $: score = computePredictionScore($predictions, $matches);
   $: championTeam = $predictions.champion ? teamById($teams, $predictions.champion) : null;
 
   $: champLocked = isChampionLocked($matches);
   $: realTeams = $teams.filter((t) => t.group && t.group !== '?');
+
+  $: hasBracket = $matches.some((m) => isBracketPredictable(m, $teams) || (['r32','r16','qf','sf','final'].includes(m.stage) && m.status === 'finished'));
 
   $: open = [...$matches]
     .filter((m) => isMatchPredictable(m))
@@ -32,6 +35,13 @@
     <section>
       <h3 class="sec">Şampiyon tahminin {#if champLocked}<span class="lock">· kilitli</span>{/if}</h3>
       <ChampionPicker teams={realTeams} locked={champLocked} />
+    </section>
+  {/if}
+
+  {#if hasBracket}
+    <section>
+      <h3 class="sec">Eleme tahminleri</h3>
+      <BracketPredict matches={$matches} teams={$teams} />
     </section>
   {/if}
 
