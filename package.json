@@ -20,6 +20,7 @@
     "vitest": "^3.2.6"
   },
   "dependencies": {
+    "canvas-confetti": "^1.9.4",
     "circle-flags": "^2.8.3",
     "svelte-spa-router": "^5.1.0"
   }
