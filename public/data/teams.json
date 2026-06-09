@@ -1,1 +1,338 @@
-[]
+[
+  {
+    "id": "MEX",
+    "name": "Meksika",
+    "code": "MEX",
+    "group": "A",
+    "flag": "mx"
+  },
+  {
+    "id": "RSA",
+    "name": "Güney Afrika",
+    "code": "RSA",
+    "group": "A",
+    "flag": "za"
+  },
+  {
+    "id": "KOR",
+    "name": "Güney Kore",
+    "code": "KOR",
+    "group": "A",
+    "flag": "kr"
+  },
+  {
+    "id": "CZE",
+    "name": "Çekya",
+    "code": "CZE",
+    "group": "A",
+    "flag": "cz"
+  },
+  {
+    "id": "CAN",
+    "name": "Kanada",
+    "code": "CAN",
+    "group": "B",
+    "flag": "ca"
+  },
+  {
+    "id": "BIH",
+    "name": "Bosnia-Herzegovina",
+    "code": "BIH",
+    "group": "B",
+    "flag": ""
+  },
+  {
+    "id": "USA",
+    "name": "ABD",
+    "code": "USA",
+    "group": "D",
+    "flag": "us"
+  },
+  {
+    "id": "PAR",
+    "name": "Paraguay",
+    "code": "PAR",
+    "group": "D",
+    "flag": "py"
+  },
+  {
+    "id": "QAT",
+    "name": "Katar",
+    "code": "QAT",
+    "group": "B",
+    "flag": "qa"
+  },
+  {
+    "id": "SUI",
+    "name": "İsviçre",
+    "code": "SUI",
+    "group": "B",
+    "flag": "ch"
+  },
+  {
+    "id": "BRA",
+    "name": "Brezilya",
+    "code": "BRA",
+    "group": "C",
+    "flag": "br"
+  },
+  {
+    "id": "MAR",
+    "name": "Fas",
+    "code": "MAR",
+    "group": "C",
+    "flag": "ma"
+  },
+  {
+    "id": "HAI",
+    "name": "Haiti",
+    "code": "HAI",
+    "group": "C",
+    "flag": ""
+  },
+  {
+    "id": "SCO",
+    "name": "İskoçya",
+    "code": "SCO",
+    "group": "C",
+    "flag": "gb-sct"
+  },
+  {
+    "id": "AUS",
+    "name": "Avustralya",
+    "code": "AUS",
+    "group": "D",
+    "flag": "au"
+  },
+  {
+    "id": "TUR",
+    "name": "Türkiye",
+    "code": "TUR",
+    "group": "D",
+    "flag": "tr"
+  },
+  {
+    "id": "GER",
+    "name": "Almanya",
+    "code": "GER",
+    "group": "E",
+    "flag": "de"
+  },
+  {
+    "id": "CUR",
+    "name": "Curaçao",
+    "code": "CUR",
+    "group": "E",
+    "flag": ""
+  },
+  {
+    "id": "NED",
+    "name": "Hollanda",
+    "code": "NED",
+    "group": "F",
+    "flag": "nl"
+  },
+  {
+    "id": "JPN",
+    "name": "Japonya",
+    "code": "JPN",
+    "group": "F",
+    "flag": "jp"
+  },
+  {
+    "id": "CIV",
+    "name": "Fildişi Sahili",
+    "code": "CIV",
+    "group": "E",
+    "flag": "ci"
+  },
+  {
+    "id": "ECU",
+    "name": "Ekvador",
+    "code": "ECU",
+    "group": "E",
+    "flag": "ec"
+  },
+  {
+    "id": "SWE",
+    "name": "İsveç",
+    "code": "SWE",
+    "group": "F",
+    "flag": "se"
+  },
+  {
+    "id": "TUN",
+    "name": "Tunus",
+    "code": "TUN",
+    "group": "F",
+    "flag": "tn"
+  },
+  {
+    "id": "ESP",
+    "name": "İspanya",
+    "code": "ESP",
+    "group": "H",
+    "flag": "es"
+  },
+  {
+    "id": "CPV",
+    "name": "Cape Verde Islands",
+    "code": "CPV",
+    "group": "H",
+    "flag": ""
+  },
+  {
+    "id": "BEL",
+    "name": "Belçika",
+    "code": "BEL",
+    "group": "G",
+    "flag": "be"
+  },
+  {
+    "id": "EGY",
+    "name": "Mısır",
+    "code": "EGY",
+    "group": "G",
+    "flag": "eg"
+  },
+  {
+    "id": "KSA",
+    "name": "Suudi Arabistan",
+    "code": "KSA",
+    "group": "H",
+    "flag": "sa"
+  },
+  {
+    "id": "URY",
+    "name": "Uruguay",
+    "code": "URY",
+    "group": "H",
+    "flag": ""
+  },
+  {
+    "id": "IRN",
+    "name": "İran",
+    "code": "IRN",
+    "group": "G",
+    "flag": "ir"
+  },
+  {
+    "id": "NZL",
+    "name": "Yeni Zelanda",
+    "code": "NZL",
+    "group": "G",
+    "flag": "nz"
+  },
+  {
+    "id": "FRA",
+    "name": "Fransa",
+    "code": "FRA",
+    "group": "I",
+    "flag": "fr"
+  },
+  {
+    "id": "SEN",
+    "name": "Senegal",
+    "code": "SEN",
+    "group": "I",
+    "flag": "sn"
+  },
+  {
+    "id": "IRQ",
+    "name": "Iraq",
+    "code": "IRQ",
+    "group": "I",
+    "flag": ""
+  },
+  {
+    "id": "NOR",
+    "name": "Norveç",
+    "code": "NOR",
+    "group": "I",
+    "flag": "no"
+  },
+  {
+    "id": "ARG",
+    "name": "Arjantin",
+    "code": "ARG",
+    "group": "J",
+    "flag": "ar"
+  },
+  {
+    "id": "ALG",
+    "name": "Cezayir",
+    "code": "ALG",
+    "group": "J",
+    "flag": "dz"
+  },
+  {
+    "id": "AUT",
+    "name": "Avusturya",
+    "code": "AUT",
+    "group": "J",
+    "flag": "at"
+  },
+  {
+    "id": "JOR",
+    "name": "Ürdün",
+    "code": "JOR",
+    "group": "J",
+    "flag": "jo"
+  },
+  {
+    "id": "POR",
+    "name": "Portekiz",
+    "code": "POR",
+    "group": "K",
+    "flag": "pt"
+  },
+  {
+    "id": "COD",
+    "name": "Congo DR",
+    "code": "COD",
+    "group": "K",
+    "flag": ""
+  },
+  {
+    "id": "ENG",
+    "name": "İngiltere",
+    "code": "ENG",
+    "group": "L",
+    "flag": "gb-eng"
+  },
+  {
+    "id": "CRO",
+    "name": "Hırvatistan",
+    "code": "CRO",
+    "group": "L",
+    "flag": "hr"
+  },
+  {
+    "id": "GHA",
+    "name": "Gana",
+    "code": "GHA",
+    "group": "L",
+    "flag": "gh"
+  },
+  {
+    "id": "PAN",
+    "name": "Panama",
+    "code": "PAN",
+    "group": "L",
+    "flag": "pa"
+  },
+  {
+    "id": "UZB",
+    "name": "Özbekistan",
+    "code": "UZB",
+    "group": "K",
+    "flag": "uz"
+  },
+  {
+    "id": "COL",
+    "name": "Kolombiya",
+    "code": "COL",
+    "group": "K",
+    "flag": "co"
+  }
+]
