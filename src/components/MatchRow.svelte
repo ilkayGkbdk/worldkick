@@ -1,10 +1,12 @@
 <script>
   import Flag from './Flag.svelte';
+  import LiveBadge from './LiveBadge.svelte';
   import { formatLocalTime } from '../lib/utils/datetime.js';
   export let match;
   export let home; // team obj
   export let away; // team obj
   $: finished = match.status === 'finished';
+  $: live = match.status === 'live';
 </script>
 
 <a class="row" href={`#/match/${match.id}`}>
@@ -12,8 +14,9 @@
     <Flag code={home?.flag} size={24} /> {home?.code ?? match.homeId}
   </span>
   <span class="mid">
-    {#if finished}
-      <strong>{match.homeScore} - {match.awayScore}</strong>
+    {#if finished || live}
+      <strong>{match.homeScore ?? 0} - {match.awayScore ?? 0}</strong>
+      {#if live}<LiveBadge />{/if}
     {:else}
       {formatLocalTime(match.datetimeUTC)}
     {/if}
@@ -32,5 +35,5 @@
   }
   .team { display: flex; align-items: center; gap: 8px; }
   .away { justify-content: flex-end; }
-  .mid { font-weight: 800; color: var(--muted); }
+  .mid { font-weight: 800; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 3px; }
 </style>
