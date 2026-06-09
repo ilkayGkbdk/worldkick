@@ -55,6 +55,9 @@
   $: cGroups.set(groupList.length);
   $: cDays.set(next ? getCountdown(Date.parse(next.datetimeUTC)).days : 0);
 
+  // Live matches (status from periodic data refresh)
+  $: live = $matches.filter((m) => m.status === 'live');
+
   // Favorite spotlight
   $: favTeam = $favorites.length ? teamById($teams, $favorites[0]) : null;
   $: favNext = favTeam ? getNextMatch(getTeamMatches($matches, favTeam.id)) : null;
@@ -70,6 +73,15 @@
     <span class="hi">{greeting} <span class="wave">⚽</span></span>
     <span class="sub">{started ? 'Turnuva sürüyor — iyi seyirler' : 'Dünya Kupası kapıda'}</span>
   </header>
+
+  {#if live.length}
+    <section class="reveal" style="--i:1">
+      <div class="shead"><h3>● Canlı</h3></div>
+      {#each live as m (m.id)}
+        <MatchRow match={m} home={teamById($teams, m.homeId)} away={teamById($teams, m.awayId)} />
+      {/each}
+    </section>
+  {/if}
 
   {#if next}
     <div class="reveal" style="--i:1">
