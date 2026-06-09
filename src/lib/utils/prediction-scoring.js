@@ -68,3 +68,39 @@ export function isChampionLocked(matches, nowMs = Date.now()) {
     .sort((a, b) => Date.parse(a.datetimeUTC) - Date.parse(b.datetimeUTC))[0];
   return first ? nowMs >= Date.parse(first.datetimeUTC) : false;
 }
+
+export const TIER_WEIGHTS = { r16: 1, qf: 2, sf: 4, final: 6 };
+
+export function reachedRound(matches) {
+  const sets = { r16: new Set(), qf: new Set(), sf: new Set(), final: new Set() };
+  let champion = null;
+  for (const m of matches) {
+    if (sets[m.stage]) {
+      if (m.homeId) sets[m.stage].add(m.homeId);
+      if (m.awayId) sets[m.stage].add(m.awayId);
+    }
+    if (m.stage === 'final' && m.status === 'finished' && m.winner) champion = m.winner;
+  }
+  return { ...sets, champion };
+}
+
+export function scoreBracketTree(bracket, matches) {
+  const reached = reachedRound(matches);
+  let pts = 0;
+  for (const tier of ['r16', 'qf', 'sf', 'final']) {
+    for (const id of bracket?.[tier] ?? []) {
+      if (reached[tier].has(id)) pts += TIER_WEIGHTS[tier];
+    }
+  }
+  return pts;
+}
+
+export function scoreChampion(champion, matches) {
+  const c = reachedRound(matches).champion;
+  return champion && c && champion === c ? 10 : 0;
+}
+
+export function isLocked(matches, nowMs = Date.now()) {
+  const first = [...matches].sort((a, b) => Date.parse(a.datetimeUTC) - Date.parse(b.datetimeUTC))[0];
+  return first ? nowMs >= Date.parse(first.datetimeUTC) : false;
+}
