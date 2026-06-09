@@ -2,6 +2,7 @@
   import { matches, teams, teamById, matchById } from '../lib/stores/data.js';
   import { formatLocalDate, formatLocalTime } from '../lib/utils/datetime.js';
   import Flag from '../components/Flag.svelte';
+  import LiveBadge from '../components/LiveBadge.svelte';
   import { predictions } from '../lib/stores/predictions.js';
 
   export let params = {};
@@ -9,6 +10,7 @@
   $: home = match ? teamById($teams, match.homeId) : null;
   $: away = match ? teamById($teams, match.awayId) : null;
   $: finished = match?.status === 'finished';
+  $: live = match?.status === 'live';
   $: myPred = match ? $predictions.matchScores[match.id] : null;
 </script>
 
@@ -24,8 +26,9 @@
         <span>{home?.name ?? match.homeId}</span>
       </a>
       <div class="center">
-        {#if finished}
-          <div class="score">{match.homeScore} - {match.awayScore}</div>
+        {#if finished || live}
+          <div class="score">{match.homeScore ?? 0} - {match.awayScore ?? 0}</div>
+          {#if live}<LiveBadge />{/if}
         {:else}
           <div class="time">{formatLocalTime(match.datetimeUTC)}</div>
           <div class="vs">VS</div>
