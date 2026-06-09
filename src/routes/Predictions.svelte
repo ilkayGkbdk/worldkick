@@ -1,12 +1,16 @@
 <script>
   import { matches, teams, teamById } from '../lib/stores/data.js';
   import { predictions } from '../lib/stores/predictions.js';
-  import { computePredictionScore, isMatchPredictable } from '../lib/utils/prediction-scoring.js';
+  import { computePredictionScore, isMatchPredictable, isChampionLocked } from '../lib/utils/prediction-scoring.js';
   import PredictionScorecard from '../components/PredictionScorecard.svelte';
   import PredictMatch from '../components/PredictMatch.svelte';
+  import ChampionPicker from '../components/ChampionPicker.svelte';
 
   $: score = computePredictionScore($predictions, $matches);
   $: championTeam = $predictions.champion ? teamById($teams, $predictions.champion) : null;
+
+  $: champLocked = isChampionLocked($matches);
+  $: realTeams = $teams.filter((t) => t.group && t.group !== '?');
 
   $: open = [...$matches]
     .filter((m) => isMatchPredictable(m))
@@ -23,6 +27,13 @@
   <h2>Tahminlerin</h2>
 
   <PredictionScorecard {score} {championTeam} />
+
+  {#if realTeams.length}
+    <section>
+      <h3 class="sec">Şampiyon tahminin {#if champLocked}<span class="lock">· kilitli</span>{/if}</h3>
+      <ChampionPicker teams={realTeams} locked={champLocked} />
+    </section>
+  {/if}
 
   {#if open.length}
     <section>
@@ -56,4 +67,5 @@
   .sec { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin: 0 0 10px; }
   .list { display: flex; flex-direction: column; gap: 10px; }
   .empty { color: var(--muted); }
+  .lock { color: var(--muted); font-weight: 600; letter-spacing: 0; text-transform: none; }
 </style>
