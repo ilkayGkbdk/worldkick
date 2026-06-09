@@ -2,6 +2,8 @@
   import Router from 'svelte-spa-router';
   import { onMount } from 'svelte';
   import { loadAll } from './lib/stores/data.js';
+  import { favorites } from './lib/stores/favorites.js';
+  import { teamColor, DEFAULT_ACCENT } from './lib/data/team-colors.js';
   import TabBar from './components/TabBar.svelte';
   import ThemeToggle from './components/ThemeToggle.svelte';
   import Home from './routes/Home.svelte';
@@ -22,6 +24,12 @@
     '/predictions': Predictions,
   };
   onMount(loadAll);
+
+  // Favori takımına göre uygulama aksan rengini kişiselleştir.
+  $: accent = ($favorites[0] && teamColor($favorites[0])) || DEFAULT_ACCENT;
+  $: if (typeof document !== 'undefined') {
+    document.documentElement.style.setProperty('--accent', accent);
+  }
 </script>
 
 <header class="topbar">
