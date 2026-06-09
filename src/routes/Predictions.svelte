@@ -3,6 +3,7 @@
   import { predictions } from '../lib/stores/predictions.js';
   import { computePredictionScore, isMatchPredictable, isChampionLocked, isBracketPredictable } from '../lib/utils/prediction-scoring.js';
   import PredictionScorecard from '../components/PredictionScorecard.svelte';
+  import { renderScorecard } from '../lib/share/scorecard-canvas.js';
   import PredictMatch from '../components/PredictMatch.svelte';
   import ChampionPicker from '../components/ChampionPicker.svelte';
   import BracketPredict from '../components/BracketPredict.svelte';
@@ -24,12 +25,31 @@
     .filter((m) => m.status === 'finished' && $predictions.matchScores[m.id])
     .sort((a, b) => Date.parse(b.datetimeUTC) - Date.parse(a.datetimeUTC))
     .slice(0, 6);
+
+  async function share() {
+    const canvas = document.createElement('canvas');
+    const acc = score.scoredCount ? Math.round((score.correctCount / score.scoredCount) * 100) : 0;
+    renderScorecard(canvas, {
+      total: score.total, accuracy: acc, exactCount: score.exactCount,
+      championName: championTeam?.name ?? null,
+    });
+    const blob = await new Promise((res) => canvas.toBlob(res, 'image/png'));
+    const file = new File([blob], 'worldkick-tahmin.png', { type: 'image/png' });
+    if (navigator.canShare?.({ files: [file] })) {
+      try { await navigator.share({ files: [file], title: 'WorldKick tahmin karnem' }); return; } catch {}
+    }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'worldkick-tahmin.png'; a.click();
+    URL.revokeObjectURL(url);
+  }
 </script>
 
 <div class="page">
   <h2>Tahminlerin</h2>
 
   <PredictionScorecard {score} {championTeam} />
+  <button class="share" on:click={share}>Kartı paylaş</button>
 
   {#if realTeams.length}
     <section>
@@ -78,4 +98,5 @@
   .list { display: flex; flex-direction: column; gap: 10px; }
   .empty { color: var(--muted); }
   .lock { color: var(--muted); font-weight: 600; letter-spacing: 0; text-transform: none; }
+  .share { align-self: flex-start; background: var(--accent); color: #fff; border: none; border-radius: 999px; padding: 10px 18px; font-weight: 800; font-size: 13px; cursor: pointer; }
 </style>
