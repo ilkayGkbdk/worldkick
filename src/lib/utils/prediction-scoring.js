@@ -8,19 +8,6 @@ export function scoreMatch(pred, match) {
   return 0;
 }
 
-export const BRACKET_WEIGHTS = { r32: 1, r16: 2, qf: 4, sf: 6, final: 8 };
-
-export function scoreBracket(pickTeamId, match) {
-  if (!pickTeamId || match.status !== 'finished' || !match.winner) return 0;
-  if (pickTeamId !== match.winner) return 0;
-  return BRACKET_WEIGHTS[match.stage] ?? 0;
-}
-
-export function championOf(matches) {
-  const final = matches.find((m) => m.stage === 'final' && m.status === 'finished' && m.winner);
-  return final ? final.winner : null;
-}
-
 export function computePredictionScore(predictions, matches) {
   const byId = new Map(matches.map((m) => [String(m.id), m]));
   const ms = predictions.matchScores ?? {};
@@ -41,25 +28,6 @@ export function computePredictionScore(predictions, matches) {
   const championPoints = scoreChampion(predictions.champion, matches);
 
   return { matchPoints, bracketPoints, championPoints, total: matchPoints + bracketPoints + championPoints, scoredCount, correctCount, exactCount, best };
-}
-
-const KNOCKOUT = new Set(['r32', 'r16', 'qf', 'sf', 'final']);
-
-export function isMatchPredictable(match, nowMs = Date.now()) {
-  return Date.parse(match.datetimeUTC) > nowMs;
-}
-
-export function isBracketPredictable(match, teams, nowMs = Date.now()) {
-  if (!KNOCKOUT.has(match.stage)) return false;
-  const known = (id) => teams.some((t) => t.id === id);
-  return known(match.homeId) && known(match.awayId) && Date.parse(match.datetimeUTC) > nowMs;
-}
-
-export function isChampionLocked(matches, nowMs = Date.now()) {
-  const first = matches
-    .filter((m) => m.stage === 'r32')
-    .sort((a, b) => Date.parse(a.datetimeUTC) - Date.parse(b.datetimeUTC))[0];
-  return first ? nowMs >= Date.parse(first.datetimeUTC) : false;
 }
 
 export const TIER_WEIGHTS = { r16: 1, qf: 2, sf: 4, final: 6 };
