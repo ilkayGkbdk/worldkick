@@ -7,8 +7,15 @@
   import PredictMatch from '../components/PredictMatch.svelte';
   import LockBanner from '../components/LockBanner.svelte';
   import BracketTree from '../components/BracketTree.svelte';
+  import { encodePredictions } from '../lib/share/predictions-url.js';
 
   $: score = computePredictionScore($predictions, $matches);
+
+  async function shareUrl() {
+    const url = `${location.origin}${location.pathname}#/p/${encodePredictions($predictions)}`;
+    if (navigator.share) { try { await navigator.share({ title: 'WorldKick tahminim', url }); return; } catch {} }
+    try { await navigator.clipboard.writeText(url); alert('Bağlantı kopyalandı'); } catch {}
+  }
   $: championTeam = $predictions.champion ? teamById($teams, $predictions.champion) : null;
 
   $: realTeams = $teams.filter((t) => t.group && t.group !== '?');
@@ -49,7 +56,10 @@
   <LockBanner matches={$matches} />
 
   <PredictionScorecard {score} {championTeam} />
-  <button class="share" on:click={share}>Kartı paylaş</button>
+  <div class="sharerow">
+    <button class="share" on:click={share}>Kartı paylaş</button>
+    <button class="urlshare" on:click={shareUrl}>🔗 Tahminimi paylaş</button>
+  </div>
 
   {#if realTeams.length}
     <section>
@@ -91,5 +101,7 @@
   .list { display: flex; flex-direction: column; gap: 10px; }
   .empty { color: var(--muted); }
   .lock { color: var(--muted); font-weight: 600; letter-spacing: 0; text-transform: none; }
-  .share { align-self: flex-start; background: var(--accent); color: #fff; border: none; border-radius: 999px; padding: 10px 18px; font-weight: 800; font-size: 13px; cursor: pointer; }
+  .sharerow { display: flex; gap: 8px; flex-wrap: wrap; }
+  .share { background: var(--accent); color: #fff; border: none; border-radius: 999px; padding: 10px 18px; font-weight: 800; font-size: 13px; cursor: pointer; }
+  .urlshare { background: var(--surface); border: 1px solid var(--border); color: var(--text); border-radius: 999px; padding: 9px 16px; font-weight: 800; font-size: 12px; cursor: pointer; }
 </style>

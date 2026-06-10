@@ -16,6 +16,7 @@
   import MatchDetail from './routes/MatchDetail.svelte';
   import TeamDetail from './routes/TeamDetail.svelte';
   import Predictions from './routes/Predictions.svelte';
+  import SharedPrediction from './routes/SharedPrediction.svelte';
 
   const routes = {
     '/': Home,
@@ -25,6 +26,7 @@
     '/match/:id': MatchDetail,
     '/team/:id': TeamDetail,
     '/predictions': Predictions,
+    '/p/:payload': SharedPrediction,
   };
   onMount(loadAll);
 
