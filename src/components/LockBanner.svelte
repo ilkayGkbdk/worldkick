@@ -1,30 +1,27 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import { isLocked } from '../lib/utils/prediction-scoring.js';
   import { getCountdown } from '../lib/utils/countdown.js';
   export let matches = [];
 
   $: opening = [...matches].sort((a, b) => Date.parse(a.datetimeUTC) - Date.parse(b.datetimeUTC))[0] ?? null;
-  $: locked = isLocked(matches);
 
-  let cd = { days: 0, hours: 0, minutes: 0 };
+  let now = Date.now();
   let timer;
-  onMount(() => {
-    const tick = () => { if (opening) cd = getCountdown(Date.parse(opening.datetimeUTC)); };
-    tick();
-    timer = setInterval(tick, 1000 * 30);
-  });
+  onMount(() => { timer = setInterval(() => { now = Date.now(); }, 1000); });
   onDestroy(() => clearInterval(timer));
+
+  $: locked = opening ? now >= Date.parse(opening.datetimeUTC) : false;
+  $: cd = opening ? getCountdown(Date.parse(opening.datetimeUTC), now) : null;
   const pad = (n) => String(n).padStart(2, '0');
 </script>
 
 {#if opening}
   <div class="bar" class:locked>
     {#if locked}
-      🔒 Tahminler kilitlendi — turnuva başladı
+      <span>🔒 Tahminler kilitlendi — turnuva başladı</span>
     {:else}
-      ⏳ Tahminler kilitlenmeden
-      <span class="pill">{cd.days}g {pad(cd.hours)}s {pad(cd.minutes)}d</span>
+      <span>⏳ Kilitlenmeye</span>
+      <span class="pill">{cd.days}g {pad(cd.hours)}:{pad(cd.minutes)}:{pad(cd.seconds)}</span>
     {/if}
   </div>
 {/if}
@@ -37,5 +34,5 @@
     border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
   }
   .bar.locked { color: var(--muted); background: var(--surface); border-color: var(--border); }
-  .pill { margin-left: auto; background: var(--accent); color: #fff; border-radius: 999px; padding: 2px 9px; font-size: 11px; }
+  .pill { margin-left: auto; background: var(--accent); color: #fff; border-radius: 999px; padding: 3px 11px; font-size: 12px; font-variant-numeric: tabular-nums; }
 </style>
