@@ -1,14 +1,21 @@
 import { writable } from 'svelte/store';
+import { toggleTier as applyTier } from '../utils/bracket-rules.js';
 
 const KEY = 'wk-predictions';
-const EMPTY = { matchScores: {}, bracketPicks: {}, champion: null };
+const EMPTY = { matchScores: {}, bracket: { r16: [], qf: [], sf: [], final: [] }, champion: null };
 
 function load() {
   try {
     const v = JSON.parse(localStorage.getItem(KEY));
-    if (v && typeof v === 'object') return { ...EMPTY, ...v };
+    if (v && typeof v === 'object') {
+      return {
+        matchScores: v.matchScores ?? {},
+        bracket: { r16: [], qf: [], sf: [], final: [], ...(v.bracket ?? {}) },
+        champion: v.champion ?? null,
+      };
+    }
   } catch {}
-  return { ...EMPTY };
+  return structuredClone(EMPTY);
 }
 
 function createPredictions() {
@@ -22,11 +29,19 @@ function createPredictions() {
     clearMatchScore(id) {
       update((s) => { const ms = { ...s.matchScores }; delete ms[id]; const n = { ...s, matchScores: ms }; persist(n); return n; });
     },
-    setBracketPick(id, teamId) {
-      update((s) => { const n = { ...s, bracketPicks: { ...s.bracketPicks, [id]: teamId } }; persist(n); return n; });
+    toggleTier(tier, teamId) {
+      update((s) => {
+        const bracket = applyTier(s.bracket, tier, teamId);
+        const champion = bracket.final.includes(s.champion) ? s.champion : null;
+        const n = { ...s, bracket, champion };
+        persist(n); return n;
+      });
     },
     setChampion(teamId) {
-      update((s) => { const n = { ...s, champion: teamId }; persist(n); return n; });
+      update((s) => {
+        if (!s.bracket.final.includes(teamId)) return s;
+        const n = { ...s, champion: teamId }; persist(n); return n;
+      });
     },
   };
 }
