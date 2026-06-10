@@ -24,7 +24,6 @@ export function championOf(matches) {
 export function computePredictionScore(predictions, matches) {
   const byId = new Map(matches.map((m) => [String(m.id), m]));
   const ms = predictions.matchScores ?? {};
-  const bp = predictions.bracketPicks ?? {};
 
   let matchPoints = 0, scoredCount = 0, correctCount = 0, exactCount = 0, best = null;
   for (const [id, pred] of Object.entries(ms)) {
@@ -38,14 +37,8 @@ export function computePredictionScore(predictions, matches) {
     if (!best || pts > best.points) best = { matchId: String(id), points: pts };
   }
 
-  let bracketPoints = 0;
-  for (const [id, teamId] of Object.entries(bp)) {
-    const match = byId.get(String(id));
-    if (match) bracketPoints += scoreBracket(teamId, match);
-  }
-
-  const champ = championOf(matches);
-  const championPoints = predictions.champion && champ && predictions.champion === champ ? 10 : 0;
+  const bracketPoints = scoreBracketTree(predictions.bracket, matches);
+  const championPoints = scoreChampion(predictions.champion, matches);
 
   return { matchPoints, bracketPoints, championPoints, total: matchPoints + bracketPoints + championPoints, scoredCount, correctCount, exactCount, best };
 }
