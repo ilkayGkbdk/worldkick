@@ -5,6 +5,7 @@
   import PredictionScorecard from '../components/PredictionScorecard.svelte';
   import { renderScorecard } from '../lib/share/scorecard-canvas.js';
   import PredictMatch from '../components/PredictMatch.svelte';
+  import LockBanner from '../components/LockBanner.svelte';
 
   $: score = computePredictionScore($predictions, $matches);
   $: championTeam = $predictions.champion ? teamById($teams, $predictions.champion) : null;
@@ -43,6 +44,8 @@
 
 <div class="page">
   <h2>Tahminlerin</h2>
+
+  <LockBanner matches={$matches} />
 
   <PredictionScorecard {score} {championTeam} />
   <button class="share" on:click={share}>Kartı paylaş</button>
