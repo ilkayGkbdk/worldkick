@@ -6,6 +6,7 @@
   import { renderScorecard } from '../lib/share/scorecard-canvas.js';
   import PredictMatch from '../components/PredictMatch.svelte';
   import LockBanner from '../components/LockBanner.svelte';
+  import BracketTree from '../components/BracketTree.svelte';
 
   $: score = computePredictionScore($predictions, $matches);
   $: championTeam = $predictions.champion ? teamById($teams, $predictions.champion) : null;
@@ -49,6 +50,13 @@
 
   <PredictionScorecard {score} {championTeam} />
   <button class="share" on:click={share}>Kartı paylaş</button>
+
+  {#if realTeams.length}
+    <section>
+      <h3 class="sec">Bracket ağacın</h3>
+      <BracketTree bracket={$predictions.bracket} champion={$predictions.champion} matches={$matches} teams={$teams} />
+    </section>
+  {/if}
 
   {#if open.length}
     <section>
