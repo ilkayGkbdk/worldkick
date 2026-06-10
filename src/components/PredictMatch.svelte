@@ -1,6 +1,7 @@
 <script>
   import { predictions } from '../lib/stores/predictions.js';
-  import { isMatchPredictable, scoreMatch } from '../lib/utils/prediction-scoring.js';
+  import { matches } from '../lib/stores/data.js';
+  import { isLocked, scoreMatch } from '../lib/utils/prediction-scoring.js';
   import { formatLocalDate, formatLocalTime } from '../lib/utils/datetime.js';
   import Flag from './Flag.svelte';
 
@@ -9,7 +10,7 @@
   export let away;
 
   $: pred = $predictions.matchScores[match.id] ?? null;
-  $: editable = isMatchPredictable(match);
+  $: editable = !isLocked($matches);
   $: finished = match.status === 'finished';
   $: pts = finished && pred ? scoreMatch(pred, match) : null;
   $: h = pred?.home ?? 0;

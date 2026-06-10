@@ -1,7 +1,7 @@
 <script>
   import { matches, teams, teamById } from '../lib/stores/data.js';
   import { predictions } from '../lib/stores/predictions.js';
-  import { computePredictionScore, isMatchPredictable } from '../lib/utils/prediction-scoring.js';
+  import { computePredictionScore, isLocked } from '../lib/utils/prediction-scoring.js';
   import PredictionScorecard from '../components/PredictionScorecard.svelte';
   import { renderScorecard } from '../lib/share/scorecard-canvas.js';
   import PredictMatch from '../components/PredictMatch.svelte';
@@ -11,10 +11,11 @@
 
   $: realTeams = $teams.filter((t) => t.group && t.group !== '?');
 
-  $: open = [...$matches]
-    .filter((m) => isMatchPredictable(m))
-    .sort((a, b) => Date.parse(a.datetimeUTC) - Date.parse(b.datetimeUTC))
-    .slice(0, 8);
+  $: open = isLocked($matches)
+    ? []
+    : [...$matches]
+        .filter((m) => m.stage === 'group')
+        .sort((a, b) => Date.parse(a.datetimeUTC) - Date.parse(b.datetimeUTC));
 
   $: scored = [...$matches]
     .filter((m) => m.status === 'finished' && $predictions.matchScores[m.id])
