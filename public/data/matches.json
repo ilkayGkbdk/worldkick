@@ -68,10 +68,10 @@
     "datetimeUTC": "2026-06-13T19:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 0,
+    "awayScore": 1,
+    "winner": "SUI",
     "scorers": []
   },
   {
