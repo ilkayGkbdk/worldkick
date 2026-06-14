@@ -39,8 +39,8 @@
     "venue": "",
     "city": "",
     "status": "finished",
-    "homeScore": 1,
-    "awayScore": 1,
+    "homeScore": null,
+    "awayScore": null,
     "winner": null,
     "scorers": []
   },
@@ -143,10 +143,10 @@
     "datetimeUTC": "2026-06-14T20:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 2,
-    "awayScore": 1,
-    "winner": "NED",
+    "awayScore": 2,
+    "winner": null,
     "scorers": []
   },
   {
