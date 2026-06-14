@@ -98,10 +98,10 @@
     "datetimeUTC": "2026-06-14T01:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 1,
+    "winner": "SCO",
     "scorers": []
   },
   {
@@ -113,10 +113,10 @@
     "datetimeUTC": "2026-06-14T04:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 1,
+    "awayScore": 0,
+    "winner": "AUS",
     "scorers": []
   },
   {
