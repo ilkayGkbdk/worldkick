@@ -39,8 +39,8 @@
     "venue": "",
     "city": "",
     "status": "finished",
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 1,
+    "awayScore": 1,
     "winner": null,
     "scorers": []
   },
@@ -83,9 +83,9 @@
     "datetimeUTC": "2026-06-13T22:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 1,
     "winner": null,
     "scorers": []
   },
