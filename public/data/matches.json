@@ -203,10 +203,10 @@
     "datetimeUTC": "2026-06-15T19:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 0,
+    "status": "finished",
+    "homeScore": 1,
     "awayScore": 1,
-    "winner": "EGY",
+    "winner": null,
     "scorers": []
   },
   {
@@ -218,9 +218,9 @@
     "datetimeUTC": "2026-06-15T22:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "live",
+    "homeScore": 0,
+    "awayScore": 0,
     "winner": null,
     "scorers": []
   },
