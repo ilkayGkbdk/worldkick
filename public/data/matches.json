@@ -39,8 +39,8 @@
     "venue": "",
     "city": "",
     "status": "finished",
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 1,
+    "awayScore": 1,
     "winner": null,
     "scorers": []
   },
@@ -158,10 +158,10 @@
     "datetimeUTC": "2026-06-14T23:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 0,
+    "winner": "CIV",
     "scorers": []
   },
   {
@@ -173,10 +173,10 @@
     "datetimeUTC": "2026-06-15T02:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 5,
+    "awayScore": 1,
+    "winner": "SWE",
     "scorers": []
   },
   {
