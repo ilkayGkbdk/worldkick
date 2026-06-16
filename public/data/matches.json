@@ -264,9 +264,9 @@
     "venue": "",
     "city": "",
     "status": "live",
-    "homeScore": 0,
-    "awayScore": 0,
-    "winner": null,
+    "homeScore": 1,
+    "awayScore": 3,
+    "winner": "NOR",
     "scorers": []
   },
   {
