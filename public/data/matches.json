@@ -248,10 +248,10 @@
     "datetimeUTC": "2026-06-16T19:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 0,
-    "awayScore": 0,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 3,
+    "awayScore": 1,
+    "winner": "FRA",
     "scorers": []
   },
   {
@@ -263,9 +263,9 @@
     "datetimeUTC": "2026-06-16T22:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "live",
+    "homeScore": 0,
+    "awayScore": 0,
     "winner": null,
     "scorers": []
   },
