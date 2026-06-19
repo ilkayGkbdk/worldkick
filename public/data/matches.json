@@ -443,10 +443,10 @@
     "datetimeUTC": "2026-06-19T22:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 0,
+    "awayScore": 1,
+    "winner": "MAR",
     "scorers": []
   },
   {
