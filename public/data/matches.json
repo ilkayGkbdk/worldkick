@@ -488,9 +488,9 @@
     "datetimeUTC": "2026-06-20T17:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 2,
-    "awayScore": 0,
+    "status": "finished",
+    "homeScore": 5,
+    "awayScore": 1,
     "winner": "NED",
     "scorers": []
   },
