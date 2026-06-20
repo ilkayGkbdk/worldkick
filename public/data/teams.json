@@ -119,9 +119,9 @@
     "flag": "de"
   },
   {
-    "id": "CUW",
+    "id": "CUR",
     "name": "Curaçao",
-    "code": "CUW",
+    "code": "CUR",
     "group": "E",
     "flag": ""
   },
@@ -203,11 +203,11 @@
     "flag": "sa"
   },
   {
-    "id": "URU",
+    "id": "URY",
     "name": "Uruguay",
-    "code": "URU",
+    "code": "URY",
     "group": "H",
-    "flag": "uy"
+    "flag": ""
   },
   {
     "id": "IRN",
