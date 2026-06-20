@@ -443,7 +443,7 @@
     "datetimeUTC": "2026-06-19T22:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 0,
     "awayScore": 1,
     "winner": "MAR",
@@ -458,10 +458,10 @@
     "datetimeUTC": "2026-06-20T00:30:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 3,
+    "awayScore": 0,
+    "winner": "BRA",
     "scorers": []
   },
   {
