@@ -533,9 +533,9 @@
     "datetimeUTC": "2026-06-21T04:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 0,
-    "awayScore": 2,
+    "awayScore": 4,
     "winner": "JPN",
     "scorers": []
   },
