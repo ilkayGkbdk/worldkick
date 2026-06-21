@@ -518,9 +518,9 @@
     "datetimeUTC": "2026-06-21T00:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 0,
     "winner": null,
     "scorers": []
   },
@@ -533,10 +533,10 @@
     "datetimeUTC": "2026-06-21T04:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 0,
+    "awayScore": 2,
+    "winner": "JPN",
     "scorers": []
   },
   {
