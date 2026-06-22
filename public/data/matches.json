@@ -593,10 +593,10 @@
     "datetimeUTC": "2026-06-22T01:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 3,
+    "winner": "EGY",
     "scorers": []
   },
   {
