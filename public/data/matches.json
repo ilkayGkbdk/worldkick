@@ -623,10 +623,10 @@
     "datetimeUTC": "2026-06-22T21:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 1,
+    "awayScore": 0,
+    "winner": "FRA",
     "scorers": []
   },
   {
