@@ -608,10 +608,10 @@
     "datetimeUTC": "2026-06-22T17:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 0,
+    "status": "finished",
+    "homeScore": 2,
     "awayScore": 0,
-    "winner": null,
+    "winner": "ARG",
     "scorers": []
   },
   {
