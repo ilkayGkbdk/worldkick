@@ -668,10 +668,10 @@
     "datetimeUTC": "2026-06-23T17:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 5,
+    "awayScore": 0,
+    "winner": "POR",
     "scorers": []
   },
   {
