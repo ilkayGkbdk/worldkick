@@ -653,10 +653,10 @@
     "datetimeUTC": "2026-06-23T03:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 1,
-    "awayScore": 0,
-    "winner": "JOR",
+    "awayScore": 2,
+    "winner": "ALG",
     "scorers": []
   },
   {
