@@ -698,10 +698,10 @@
     "datetimeUTC": "2026-06-23T23:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
+    "status": "finished",
     "homeScore": 0,
-    "awayScore": 0,
-    "winner": null,
+    "awayScore": 1,
+    "winner": "CRO",
     "scorers": []
   },
   {
