@@ -819,8 +819,8 @@
     "venue": "",
     "city": "",
     "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 1,
+    "awayScore": 1,
     "winner": null,
     "scorers": []
   },
@@ -834,9 +834,9 @@
     "venue": "",
     "city": "",
     "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "homeScore": 0,
+    "awayScore": 1,
+    "winner": "CIV",
     "scorers": []
   },
   {
