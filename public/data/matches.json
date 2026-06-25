@@ -818,10 +818,10 @@
     "datetimeUTC": "2026-06-25T20:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": 1,
+    "status": "finished",
+    "homeScore": 2,
     "awayScore": 1,
-    "winner": null,
+    "winner": "ECU",
     "scorers": []
   },
   {
@@ -833,9 +833,9 @@
     "datetimeUTC": "2026-06-25T20:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
+    "status": "finished",
     "homeScore": 0,
-    "awayScore": 1,
+    "awayScore": 2,
     "winner": "CIV",
     "scorers": []
   },
