@@ -1088,10 +1088,10 @@
     "datetimeUTC": "2026-06-28T19:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 0,
-    "awayScore": 0,
-    "winner": null,
+    "awayScore": 1,
+    "winner": "CAN",
     "scorers": []
   },
   {
