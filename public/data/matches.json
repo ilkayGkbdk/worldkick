@@ -1103,10 +1103,10 @@
     "datetimeUTC": "2026-06-29T17:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 1,
+    "status": "finished",
+    "homeScore": 2,
     "awayScore": 1,
-    "winner": null,
+    "winner": "BRA",
     "scorers": []
   },
   {
