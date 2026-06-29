@@ -1119,9 +1119,9 @@
     "venue": "",
     "city": "",
     "status": "live",
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 1,
-    "winner": null,
+    "winner": "GER",
     "scorers": []
   },
   {
