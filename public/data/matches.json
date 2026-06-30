@@ -1133,9 +1133,9 @@
     "datetimeUTC": "2026-06-30T01:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 0,
-    "awayScore": 0,
+    "status": "finished",
+    "homeScore": 4,
+    "awayScore": 4,
     "winner": null,
     "scorers": []
   },
