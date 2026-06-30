@@ -1121,7 +1121,7 @@
     "status": "finished",
     "homeScore": 4,
     "awayScore": 5,
-    "winner": null,
+    "winner": "PAR",
     "scorers": []
   },
   {
@@ -1134,9 +1134,9 @@
     "venue": "",
     "city": "",
     "status": "finished",
-    "homeScore": 4,
+    "homeScore": 3,
     "awayScore": 4,
-    "winner": null,
+    "winner": "MAR",
     "scorers": []
   },
   {
@@ -1324,7 +1324,7 @@
     "stage": "r16",
     "group": null,
     "homeId": "CAN",
-    "awayId": "",
+    "awayId": "MAR",
     "datetimeUTC": "2026-07-04T17:00:00Z",
     "venue": "",
     "city": "",
@@ -1338,7 +1338,7 @@
     "id": "537375",
     "stage": "r16",
     "group": null,
-    "homeId": "",
+    "homeId": "PAR",
     "awayId": "",
     "datetimeUTC": "2026-07-04T21:00:00Z",
     "venue": "",
@@ -1353,7 +1353,7 @@
     "id": "537377",
     "stage": "r16",
     "group": null,
-    "homeId": "",
+    "homeId": "BRA",
     "awayId": "",
     "datetimeUTC": "2026-07-05T20:00:00Z",
     "venue": "",
