@@ -1193,10 +1193,10 @@
     "datetimeUTC": "2026-07-01T16:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 0,
+    "awayScore": 1,
+    "winner": "COD",
     "scorers": []
   },
   {
