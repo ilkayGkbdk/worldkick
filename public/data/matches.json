@@ -1208,10 +1208,10 @@
     "datetimeUTC": "2026-07-01T20:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 2,
+    "status": "finished",
+    "homeScore": 3,
     "awayScore": 2,
-    "winner": null,
+    "winner": "BEL",
     "scorers": []
   },
   {
