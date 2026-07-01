@@ -1178,10 +1178,10 @@
     "datetimeUTC": "2026-07-01T01:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 0,
+    "winner": "MEX",
     "scorers": []
   },
   {
