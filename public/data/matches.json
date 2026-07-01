@@ -1209,9 +1209,9 @@
     "venue": "",
     "city": "",
     "status": "live",
-    "homeScore": 0,
-    "awayScore": 1,
-    "winner": "SEN",
+    "homeScore": 2,
+    "awayScore": 2,
+    "winner": null,
     "scorers": []
   },
   {
