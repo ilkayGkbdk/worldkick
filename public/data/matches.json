@@ -1238,8 +1238,8 @@
     "datetimeUTC": "2026-07-02T19:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 2,
+    "status": "finished",
+    "homeScore": 3,
     "awayScore": 0,
     "winner": "ESP",
     "scorers": []
