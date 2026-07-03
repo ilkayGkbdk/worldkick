@@ -1253,10 +1253,10 @@
     "datetimeUTC": "2026-07-02T23:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 2,
-    "awayScore": 2,
-    "winner": null,
+    "awayScore": 1,
+    "winner": "POR",
     "scorers": []
   },
   {
@@ -1268,10 +1268,10 @@
     "datetimeUTC": "2026-07-03T03:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "live",
+    "homeScore": 2,
+    "awayScore": 0,
+    "winner": "SUI",
     "scorers": []
   },
   {
