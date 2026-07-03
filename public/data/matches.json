@@ -1300,8 +1300,8 @@
     "city": "",
     "status": "live",
     "homeScore": 1,
-    "awayScore": 0,
-    "winner": "ARG",
+    "awayScore": 1,
+    "winner": null,
     "scorers": []
   },
   {
