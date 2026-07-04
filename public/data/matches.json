@@ -1343,10 +1343,10 @@
     "datetimeUTC": "2026-07-04T21:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
+    "status": "live",
     "homeScore": 0,
-    "awayScore": 0,
-    "winner": null,
+    "awayScore": 1,
+    "winner": "FRA",
     "scorers": []
   },
   {
