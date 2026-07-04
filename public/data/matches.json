@@ -1298,10 +1298,10 @@
     "datetimeUTC": "2026-07-03T22:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 1,
-    "awayScore": 1,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 3,
+    "awayScore": 2,
+    "winner": "ARG",
     "scorers": []
   },
   {
@@ -1313,10 +1313,10 @@
     "datetimeUTC": "2026-07-04T01:30:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 0,
+    "winner": "COL",
     "scorers": []
   },
   {
