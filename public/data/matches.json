@@ -1328,10 +1328,10 @@
     "datetimeUTC": "2026-07-04T17:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 0,
-    "awayScore": 0,
-    "winner": null,
+    "awayScore": 3,
+    "winner": "MAR",
     "scorers": []
   },
   {
