@@ -1388,10 +1388,10 @@
     "datetimeUTC": "2026-07-06T19:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 0,
-    "awayScore": 0,
-    "winner": null,
+    "awayScore": 1,
+    "winner": "ESP",
     "scorers": []
   },
   {
