@@ -1403,9 +1403,9 @@
     "datetimeUTC": "2026-07-07T00:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
+    "status": "finished",
     "homeScore": 1,
-    "awayScore": 2,
+    "awayScore": 4,
     "winner": "BEL",
     "scorers": []
   },
