@@ -1418,10 +1418,10 @@
     "datetimeUTC": "2026-07-07T16:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 0,
+    "status": "finished",
+    "homeScore": 3,
     "awayScore": 2,
-    "winner": "EGY",
+    "winner": "ARG",
     "scorers": []
   },
   {
