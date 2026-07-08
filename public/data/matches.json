@@ -1436,7 +1436,7 @@
     "status": "finished",
     "homeScore": 4,
     "awayScore": 3,
-    "winner": null,
+    "winner": "SUI",
     "scorers": []
   },
   {
@@ -1488,8 +1488,8 @@
     "id": "537386",
     "stage": "qf",
     "group": null,
-    "homeId": "",
-    "awayId": "",
+    "homeId": "ARG",
+    "awayId": "SUI",
     "datetimeUTC": "2026-07-12T01:00:00Z",
     "venue": "",
     "city": "",
