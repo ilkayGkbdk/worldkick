@@ -1493,10 +1493,10 @@
     "datetimeUTC": "2026-07-12T01:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 3,
+    "awayScore": 1,
+    "winner": "ARG",
     "scorers": []
   },
   {
