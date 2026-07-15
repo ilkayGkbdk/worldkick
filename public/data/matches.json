@@ -1523,10 +1523,10 @@
     "datetimeUTC": "2026-07-15T19:00:00Z",
     "venue": "",
     "city": "",
-    "status": "live",
-    "homeScore": 0,
-    "awayScore": 0,
-    "winner": null,
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 2,
+    "winner": "ARG",
     "scorers": []
   },
   {
