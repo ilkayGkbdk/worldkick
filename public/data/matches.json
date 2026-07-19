@@ -1554,8 +1554,8 @@
     "venue": "",
     "city": "",
     "status": "scheduled",
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 0,
+    "awayScore": 0,
     "winner": null,
     "scorers": []
   }
