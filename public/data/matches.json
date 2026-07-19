@@ -1553,7 +1553,7 @@
     "datetimeUTC": "2026-07-19T19:00:00Z",
     "venue": "",
     "city": "",
-    "status": "scheduled",
+    "status": "live",
     "homeScore": 0,
     "awayScore": 0,
     "winner": null,
